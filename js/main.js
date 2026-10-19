@@ -251,7 +251,7 @@
       },
     });
     const disp = $('[data-heat-disp]');
-    const warp = { s: 12 };
+    const warp = { s: 6 };
     const wins = $$('[data-skyline] .win');
     const air = $$('[data-airflow] path');
     air.forEach((p) => { const l = p.getTotalLength(); gsap.set(p, { strokeDasharray: l, strokeDashoffset: l }); });
@@ -260,7 +260,7 @@
       .fromTo('[data-sky-dusk]', { opacity: 0 }, { opacity: 1, duration: 1.2 }, 0.6)
       .to('[data-sky-dusk]', { opacity: 0, duration: 1.4 }, 2.2)
       .fromTo('[data-sun]', { opacity: 1, y: 0 }, { opacity: 0, y: 520, duration: 3 }, 0)
-      .fromTo(warp, { s: 12 }, { s: 0, duration: 2.6, onUpdate: () => disp.setAttribute('scale', warp.s.toFixed(1)) }, 0)
+      .fromTo(warp, { s: 6 }, { s: 0, duration: 2.6, onUpdate: () => disp.setAttribute('scale', warp.s.toFixed(1)) }, 0)
       .fromTo('[data-heat-waves]', { opacity: 0.55 }, { opacity: 0, duration: 2.2 }, 0)
       .fromTo('[data-night]', { opacity: 0 }, { opacity: 1, duration: 1.2 }, 2.8)
       .fromTo(wins, { opacity: 0 }, { opacity: 0.75, duration: 0.2, stagger: { amount: 1.2, from: 'random' } }, 2.5)

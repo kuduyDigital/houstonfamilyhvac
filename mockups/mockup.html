@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Houston Family HVAC — Presentation Mockups</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..600&family=Exo+2:wght@300;400;500;600&family=Reenie+Beanie&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#0b0a08; --stone:#15130f; --gold:#c9a24a; --gold-l:#e6cb85; --marble:#f1ece2; --mist:#a39d90; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #222; font-family: "Exo 2", sans-serif; color: var(--marble); display: grid; gap: 40px; padding: 40px; justify-items: start; }
+  .board { position: relative; overflow: hidden; background: var(--ink); isolation: isolate; }
+  .board::before { content: ""; position: absolute; inset: 0; z-index: -1;
+    background: radial-gradient(60% 70% at 70% 40%, rgba(214,130,60,.16), transparent 70%), radial-gradient(40% 50% at 15% 90%, rgba(201,162,74,.10), transparent 70%); }
+  .grain::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .07; mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  .meander { height: 20px; opacity: .55;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='20' viewBox='0 0 30 20' fill='none' stroke='%23c9a24a' stroke-width='1.3' stroke-linecap='square'%3E%3Cpath d='M0 19H5V1H25V14H10V6H20V10'/%3E%3Cpath d='M25 14V19H30'/%3E%3C/svg%3E");
+    background-repeat: repeat-x; background-size: 30px 20px; }
+  .label { font-size: 13px; font-weight: 500; letter-spacing: .26em; text-transform: uppercase; color: var(--gold); }
+  .display { font-family: "Bodoni Moda", serif; font-weight: 500; letter-spacing: -.02em; line-height: .95; }
+  .display em { font-style: italic; font-weight: 400; padding: 0 .12em 0 .06em; margin-left: -.06em; background: linear-gradient(100deg,#9c7a2e,#e6cb85 30%,#b8913c 55%,#f3dea0 78%,#9c7a2e); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .hand { font-family: "Reenie Beanie", cursive; color: var(--gold-l); line-height: .95; }
+  .kuduy { font-size: 13px; letter-spacing: .3em; text-transform: uppercase; color: var(--mist); }
+  .kuduy b { color: var(--gold-l); font-weight: 600; }
+  img { display: block; }
+
+  /* ---------- Devices ---------- */
+  .laptop { position: absolute; }
+  .laptop .lid { background: linear-gradient(180deg,#2a2723,#121110); border-radius: 22px 22px 6px 6px; padding: 16px 16px 26px; box-shadow: 0 0 0 1.5px #3a362f inset, 0 60px 120px -30px rgba(0,0,0,.95); position: relative; }
+  .laptop .lid::before { content: ""; position: absolute; top: 6px; left: 50%; width: 6px; height: 6px; border-radius: 50%; background: #2f2c28; transform: translateX(-50%); }
+  .laptop .screen { border-radius: 6px; overflow: hidden; background: #000; aspect-ratio: 16/10; }
+  .laptop .screen img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+  .laptop .base { height: 22px; margin: 0 -7%; background: linear-gradient(180deg,#4a463f 0%,#2a2723 40%,#141311 100%); border-radius: 0 0 26px 26px / 0 0 18px 18px; position: relative; box-shadow: 0 30px 50px -10px rgba(0,0,0,.9); }
+  .laptop .base::before { content: ""; position: absolute; top: 0; left: 50%; width: 18%; height: 7px; transform: translateX(-50%); background: #1a1816; border-radius: 0 0 10px 10px; }
+
+  .phone { position: absolute; border-radius: 54px; padding: 12px; background: linear-gradient(145deg,#3b3730,#141210 40%,#2b2823); box-shadow: 0 0 0 1.5px #4a453c inset, 0 0 0 1px #000, 0 70px 110px -30px rgba(0,0,0,1); }
+  .phone .screen { position: relative; border-radius: 43px; overflow: hidden; background: #000; aspect-ratio: 390/844; }
+  .phone .screen img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+  .phone .screen::before { content: ""; position: absolute; z-index: 2; top: 11px; left: 50%; width: 31%; height: 26px; border-radius: 20px; background: #000; transform: translateX(-50%); }
+  .phone .screen::after { content: ""; position: absolute; inset: 0; background: linear-gradient(115deg, rgba(255,255,255,.10), transparent 35%); pointer-events: none; }
+
+  .browser { border-radius: 14px; overflow: hidden; background: #161411; box-shadow: 0 0 0 1px #2c2820, 0 60px 100px -30px rgba(0,0,0,1); }
+  .browser .bar { height: 38px; display: flex; align-items: center; gap: 8px; padding: 0 16px; background: #1c1a16; border-bottom: 1px solid #2c2820; }
+  .browser .bar i { width: 11px; height: 11px; border-radius: 50%; background: #3a352d; }
+  .browser .bar span { margin-left: 18px; flex: 1; max-width: 360px; height: 22px; border-radius: 6px; background: #120f0c; color: var(--mist); font-size: 11px; display: flex; align-items: center; padding-left: 12px; letter-spacing: .02em; }
+  .browser img { width: 100%; }
+
+  .floor { position: absolute; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, rgba(201,162,74,.5), transparent); }
+</style>
+</head>
+<body>
+
+<!-- 1 · HERO DEVICES 1600×1000 -->
+<section class="board grain" id="m-hero" style="width:1600px;height:1000px">
+  <div style="position:absolute;left:80px;top:72px;width:520px">
+    <p class="label" style="margin-bottom:26px">Website concept · 2026</p>
+    <h1 class="display" style="font-size:92px">Houston<br>Family <em>HVAC.</em></h1>
+    <p style="margin-top:30px;font-size:19px;line-height:1.6;color:var(--mist);max-width:420px">A neo-classical, family-first website for a Houston HVAC team with 60+ years of combined experience. Built around their own photos, reviews and logo.</p>
+    <p class="hand" style="font-size:40px;margin-top:34px;transform:rotate(-4deg);transform-origin:left">handled like family.</p>
+  </div>
+  <div class="laptop" style="left:560px;top:200px;width:900px">
+    <div class="lid"><div class="screen"><img src="shots/desktop-hero.png" alt=""></div></div>
+    <div class="base"></div>
+  </div>
+  <div class="phone" style="left:1330px;top:330px;width:230px;transform:rotate(4deg)"><div class="screen"><img src="shots/mobile-hero.png" alt=""></div></div>
+  <div class="phone" style="left:380px;top:560px;width:190px;transform:rotate(-7deg)"><div class="screen"><img src="shots/mobile-heat-hot.png" alt=""></div></div>
+  <div class="meander" style="position:absolute;left:80px;right:80px;bottom:74px"></div>
+  <p class="kuduy" style="position:absolute;left:80px;bottom:34px">Design &amp; build by <b>KUDUY</b> · kuduy.com</p>
+  <p class="kuduy" style="position:absolute;right:80px;bottom:34px">HTML · Tailwind v4 · GSAP · Lenis</p>
+</section>
+
+<!-- 2 · 98° → 72° STORY 1600×900 -->
+<section class="board grain" id="m-heat" style="width:1600px;height:900px">
+  <div style="position:absolute;left:80px;top:64px;right:80px;display:flex;justify-content:space-between;align-items:end">
+    <div>
+      <p class="label" style="margin-bottom:20px">Signature scroll moment</p>
+      <h2 class="display" style="font-size:72px">98° <span style="color:var(--gold)">→</span> <em>72°</em></h2>
+    </div>
+    <p style="max-width:420px;font-size:17px;line-height:1.6;color:var(--mist)">As you scroll, the section pins and the Houston sky cools from a scorching afternoon to a calm, lit-up night, while the counter drops from 98° to 72°.</p>
+  </div>
+  <div class="browser" style="position:absolute;left:80px;top:260px;width:700px;transform:perspective(2200px) rotateY(10deg);transform-origin:right">
+    <div class="bar"><i></i><i></i><i></i><span>houstonfamilyhvac.org</span></div>
+    <img src="shots/desktop-heat-hot.png" alt="">
+  </div>
+  <div class="browser" style="position:absolute;right:80px;top:260px;width:700px;transform:perspective(2200px) rotateY(-10deg);transform-origin:left">
+    <div class="bar"><i></i><i></i><i></i><span>houstonfamilyhvac.org</span></div>
+    <img src="shots/desktop-heat-cool.png" alt="">
+  </div>
+  <p class="hand" style="position:absolute;left:50%;top:770px;transform:translateX(-50%) rotate(-3deg);font-size:48px;text-align:center;z-index:2">scroll to cool &nbsp;→</p>
+  <p class="kuduy" style="position:absolute;left:80px;bottom:34px">Design &amp; build by <b>KUDUY</b></p>
+</section>
+
+<!-- 3 · SECTION CASCADE 1600×1000 -->
+<section class="board grain" id="m-cascade" style="width:1600px;height:1000px">
+  <div style="position:absolute;left:80px;top:72px;width:430px;z-index:3">
+    <p class="label" style="margin-bottom:22px">Every section, crafted</p>
+    <h2 class="display" style="font-size:66px">Real work.<br>Real <em>reviews.</em></h2>
+    <ul style="list-style:none;margin-top:36px;display:grid;gap:16px;font-size:17px;color:var(--mist)">
+      <li><span style="color:var(--gold-l)">◆</span>&nbsp; Keystone medallion header</li>
+      <li><span style="color:var(--gold-l)">◆</span>&nbsp; Hover a service, see the actual job</li>
+      <li><span style="color:var(--gold-l)">◆</span>&nbsp; A temple that builds itself on scroll</li>
+      <li><span style="color:var(--gold-l)">◆</span>&nbsp; Google reviews, in their own words</li>
+      <li><span style="color:var(--gold-l)">◆</span>&nbsp; Tap-to-call on every screen</li>
+    </ul>
+  </div>
+  <div style="position:absolute;left:560px;top:40px;width:1300px;height:1100px;transform:perspective(2600px) rotateX(18deg) rotateZ(-8deg) rotateY(-14deg);transform-style:preserve-3d">
+    <div class="browser" style="position:absolute;left:0;top:0;width:760px"><div class="bar"><i></i><i></i><i></i><span>Services</span></div><img src="shots/desktop-services.png" alt=""></div>
+    <div class="browser" style="position:absolute;left:300px;top:330px;width:760px"><div class="bar"><i></i><i></i><i></i><span>The Family</span></div><img src="shots/desktop-temple.png" alt=""></div>
+    <div class="browser" style="position:absolute;left:600px;top:660px;width:760px"><div class="bar"><i></i><i></i><i></i><span>Reviews</span></div><img src="shots/desktop-reviews.png" alt=""></div>
+  </div>
+  <p class="kuduy" style="position:absolute;left:80px;bottom:34px">Design &amp; build by <b>KUDUY</b></p>
+</section>
+
+<!-- 4 · INSTAGRAM 4:5 1080×1350 -->
+<section class="board grain" id="m-social" style="width:1080px;height:1350px">
+  <div style="position:absolute;left:70px;right:70px;top:80px;text-align:center">
+    <p class="label" style="margin-bottom:24px">For @houstonfamilyhvac</p>
+    <h2 class="display" style="font-size:78px">We designed your<br><em>website.</em></h2>
+    <p class="hand" style="font-size:40px;margin-top:22px;transform:rotate(-3deg)">built from your own photos &amp; reviews</p>
+  </div>
+  <div class="phone" style="left:90px;top:470px;width:290px;transform:rotate(-8deg)"><div class="screen"><img src="shots/mobile-heat-hot.png" alt=""></div></div>
+  <div class="phone" style="left:700px;top:470px;width:290px;transform:rotate(8deg)"><div class="screen"><img src="shots/mobile-services.png" alt=""></div></div>
+  <div class="phone" style="left:380px;top:400px;width:320px;z-index:2"><div class="screen"><img src="shots/mobile-hero.png" alt=""></div></div>
+  <div class="meander" style="position:absolute;left:70px;right:70px;bottom:92px"></div>
+  <p class="kuduy" style="position:absolute;left:0;right:0;bottom:46px;text-align:center">Design &amp; build by <b>KUDUY</b> · kuduy.com</p>
+</section>
+
+</body>
+</html>

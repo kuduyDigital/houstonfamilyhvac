@@ -21,3 +21,11 @@ While editing styles: `npm run dev` (Tailwind watch).
 Upload `index.html`, `dist/`, `js/`, `assets/` to any static host (Netlify, Vercel, Cloudflare Pages, GitHub Pages). No server needed.
 
 Docs: `PROJECT_BRIEF.md`, `DESIGN_PROPOSAL.md`, `QA_REPORT.md`.
+
+## Presentation mockups
+With `npm run serve` running:
+```bash
+node mockups/capture.mjs   # retina screenshots of the live site → mockups/shots/
+node mockups/render.mjs    # composites → mockups/01…04-*.png
+```
+Uses your installed Chrome via `puppeteer-core` (set `CHROME_PATH` if it lives elsewhere). Outreach copy: `OUTREACH.md`.
