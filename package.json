@@ -1,0 +1,27 @@
+{
+  "name": "houston-family-hvac",
+  "version": "1.0.0",
+  "description": "Houston Family HVAC website (HTML + Tailwind CSS v4 + Lenis + GSAP)",
+  "scripts": {
+    "vendor": "node scripts-vendor.mjs",
+    "build:css": "tailwindcss -i src/input.css -o dist/styles.css --minify",
+    "build": "npm run vendor && npm run build:css",
+    "dev": "tailwindcss -i src/input.css -o dist/styles.css --watch",
+    "serve": "node serve.mjs 5173",
+    "images": "node scripts-images.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "sharp": "^0.35.5",
+    "tailwindcss": "^4.3.3"
+  },
+  "dependencies": {
+    "gsap": "^3.15.0",
+    "lenis": "^1.3.27"
+  },
+  "private": true
+}
